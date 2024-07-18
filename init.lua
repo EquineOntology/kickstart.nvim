@@ -723,6 +723,16 @@ require('lazy').setup({
         -- You can use 'stop_after_first' to run the first available formatter from the list
         javascript = { { "prettierd", "prettier" } },
       },
+      formatters = {
+        prettier = {
+          -- This tells prettier to use the project's configuration
+          prepend_args = { '--config-precedence', 'prefer-file' },
+        },
+        prettierd = {
+          -- For prettierd, we don't need to set anything special
+          -- It will automatically use the project's configuration
+        },
+      },
     },
   },
 
