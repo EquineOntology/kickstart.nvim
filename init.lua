@@ -665,6 +665,16 @@ require('lazy').setup({
         -- is found.
         javascript = { { 'prettierd', 'prettier' } },
       },
+      formatters = {
+        prettier = {
+          -- This tells prettier to use the project's configuration
+          prepend_args = { '--config-precedence', 'prefer-file' },
+        },
+        prettierd = {
+          -- For prettierd, we don't need to set anything special
+          -- It will automatically use the project's configuration
+        },
+      },
     },
   },
 
